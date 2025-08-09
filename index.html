@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Nathan's Landscaping | Worcester</title>
+<meta content="Landscaping, fencing, patios, pergolas, garden clearance and more across Worcester &amp; Worcestershire. Transform your garden with Nathan's Landscaping." name="description"/>
+<style>
+    :root {
+      --green-900: #0b2c22;
+      --green-800: #0e3a2a;
+      --green-700: #145a3a;
+      --green-600: #1f7a50;
+      --green-500: #2aa566;
+      --green-300: #bfe7cf;
+      --beige-50: #f3f7f2;
+      --beige-100: #eaf2ea;
+      --stone-900: #0f1a14;
+      --stone-700: #2a3b32;
+      --stone-600: #3a4c42;
+      --shadow: 0 10px 30px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06);
+      --radius-xl: 24px;
+      --radius-lg: 16px;
+    }
+
+    * { box-sizing: border-box }
+    html { scroll-behavior: smooth }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: #102018;
+      background: var(--beige-50);
+      line-height: 1.5;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+    footer {
+      margin-top: auto;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(140%) blur(8px);
+      background: linear-gradient(to bottom, rgba(243,247,242,0.95), rgba(243,247,242,0.70));
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .nav { display:flex; align-items:center; justify-content:center; height:68px; }
+    .brand { font-weight: 800; letter-spacing: .4px; color: var(--green-800); text-decoration:none; font-size: clamp(1.1rem, 2.5vw, 1.35rem); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(1200px 400px at 10% -10%, rgba(14,58,42,.14), transparent 60%),
+        radial-gradient(1000px 400px at 90% 0%, rgba(31,122,80,.14), transparent 60%),
+        linear-gradient(180deg, #e5efe9 0%, #eef4ef 35%);
+      padding: 90px 0 40px;
+    }
+    .hero-inner { text-align: center; }
+    .kicker {
+      display:inline-block; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+      color: var(--green-700); background: #e1efe6; border:1px solid #cfe5d8; padding:6px 10px; border-radius:999px; font-size:12px;
+    }
+    h1.title { margin: 16px 0 14px; font-size: clamp(2rem, 5vw, 3.25rem); line-height:1.05; color: var(--green-900); }
+    .sub { max-width: 900px; margin: 0 auto; color: #1f3a2e; font-size: clamp(1rem, 2.2vw, 1.15rem); }
+    .cta-row { margin-top: 26px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+    .btn {
+      display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; border-radius: 999px; padding: 12px 18px;
+      border:1px solid transparent; box-shadow: var(--shadow);
+    }
+    .btn.primary { background: var(--green-700); color: white; }
+    .btn.primary:hover { background: var(--green-800); }
+    .btn.ghost { background: white; color: var(--green-800); border-color:#e2eee6; }
+    .btn.ghost:hover { background: #f2faf5; }
+
+    section { padding: 72px 0; }
+    .eyebrow { text-transform: uppercase; letter-spacing:.12em; font-weight:800; color: var(--green-700); font-size:12px; }
+    h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 10px 0 14px; color: var(--green-900); }
+
+    .about { display:grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: center; }
+    .about .card { background:white; border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow); border:1px solid #e8f0ea; }
+    .about p { margin: 0 0 12px; color:#2b4336; }
+    .leaf {
+      aspect-ratio: 4/3; border-radius: var(--radius-xl);
+      border:1px solid #dfeedf; box-shadow: var(--shadow);
+      position: relative; overflow: hidden; background: none;
+    }
+
+    .services { background: var(--beige-100); border-top:1px solid #e8efe8; border-bottom:1px solid #e8efe8; }
+    .grid { display:grid; gap: 16px; grid-template-columns: repeat(6,1fr); }
+    .service-card { grid-column: span 6; background:white; border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow); border:1px solid #e6efe9; position:relative; overflow:hidden; }
+    .service-card::after{content:""; position:absolute; inset:auto 0 -60px -20px; height:120px; background: radial-gradient(180px 60px at left bottom, rgba(42,165,102,.18), transparent 70%)}
+    .service-card h3 { margin: 2px 0 6px; color: var(--stone-900); font-size: 1.15rem; }
+    .service-card p { margin: 0; color: #2d4738; }
+    .service-card .tag { display:inline-block; font-size:12px; background:#eff8f1; border:1px solid #ddeadf; color:var(--green-700); padding:4px 10px; border-radius:999px; font-weight:700; margin-bottom:8px }
+    @media (min-width: 720px){ .service-card { grid-column: span 3 } }
+    @media (min-width: 1024px){ .service-card { grid-column: span 2 } }
+
+    .features-strip { margin-top: 16px; display:grid; grid-template-columns: repeat(3,1fr); gap:10px; }
+    .feat { background:white; border:1px dashed #cfe8d7; border-radius: 14px; padding: 12px; text-align:center; color:#2f4a39 }
+
+    .testimonials .wrap { display:grid; gap: 16px; grid-template-columns: 1fr; }
+    .quote { background:white; border-left: 6px solid var(--green-600); padding: 18px 20px; border-radius: 12px; box-shadow: var(--shadow); border-right:1px solid #e7efe8; }
+    .quote p { margin: 0 0 8px; }
+    .quote .by { color:#234233; font-weight:700 }
+    @media (min-width: 900px){ .testimonials .wrap { grid-template-columns: 1fr 1fr 1fr } }
+
+    .cta { text-align:center; background: linear-gradient(180deg, #eaf4ee, #e6f1eb); border-top:1px solid #e4efe8; border-bottom:1px solid #e4efe8; }
+
+    footer { padding: 28px 0 48px; color:#2e483a; }
+    footer .foot { display:flex; gap: 20px; align-items:center; justify-content:space-between; flex-wrap: wrap }
+    .small { color:#3a5b49; font-size: 14px; }
+
+    .mt-6 { margin-top: 24px }
+    .mt-2 { margin-top: 8px }
+    .center { text-align:center }
+    .cols-2 { columns: 1; column-gap: 26px }
+    @media (min-width: 880px){ .cols-2 { columns: 2 } }
+
+    .contact-form { max-width: 840px; margin: 0 auto; background: white; border:1px solid #e0ede5; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow) }
+    .grid-form { display:grid; grid-template-columns: 1fr; gap: 12px }
+    .field { display:flex; flex-direction:column }
+    .field-full { grid-column: 1 / -1 }
+    .field label { font-weight:700; font-size: 0.9rem; color: var(--green-800); margin-bottom:6px }
+    .field input, .field textarea { padding: 12px 14px; border-radius: 12px; border:1px solid #cfe4d7; background:#f9fcfa; outline:none }
+    .field input:focus, .field textarea:focus { border-color: var(--green-600); background:white }
+    @media (min-width: 760px){ .grid-form { grid-template-columns: 1fr 1fr } .field-full { grid-column: 1 / 3 } }
+
+    .showcases { padding-top: 48px }
+    .showcase-grid { display:grid; gap: 16px; grid-template-columns: 1fr; }
+    @media (min-width: 900px){ .showcase-grid { grid-template-columns: 1fr 1fr } }
+    .scard { background:white; border:1px solid #e4efe8; border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow) }
+    .slider { position: relative; overflow: hidden; border-radius: 12px; }
+    .slides { display:flex; transition: transform .45s ease; }
+    .slides img { width: 100%; flex: 0 0 100%; aspect-ratio: 16/9; object-fit: cover; display:block }
+    .sbtn { position:absolute; top:50%; transform: translateY(-50%); border:0; background: rgba(0,0,0,.35); color:#fff; width:36px; height:36px; border-radius: 999px; cursor:pointer }
+    .sbtn:hover { background: rgba(0,0,0,.5) }
+    .sbtn.prev { left: 8px }
+    .sbtn.next { right: 8px }
+
+    .leaf.slider .slides img { aspect-ratio: auto; height: 100%; }
+  
+.logo { height: 200px; margin-top: 25px; margin-right: 1%; }
+.design-credit { font-size: 0.8rem; margin-top: 10px; }
+.design-credit.fullbleed{
+  position: relative;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: auto;
+  border-radius: 0;
+  box-shadow: none;
+  background: #0b2c22;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+.design-credit.fullbleed a { color: #bfe7cf; text-decoration: none; }
+.design-credit.fullbleed a:hover { text-decoration: underline; }
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav .brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+footer { padding-bottom: 0; }
+header .container {
+  max-width: 100%;
+  padding-left: 0;
+}
+.logo {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 70%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+.nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav .brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .about .card,
+  .about .leaf {
+    grid-column: 1;
+  }
+
+  .leaf {
+    width: 100%;
+    aspect-ratio: auto;
+  }
+  .leaf.slider .slides img {
+    aspect-ratio: 16/9;
+    height: auto;
+  }
+}
+
+:root { --tap: 44px; }
+
+:focus-visible { outline: 3px solid var(--green-500); outline-offset: 2px; border-radius: 6px; }
+
+@media (max-width: 768px){
+  .container { padding: 0 14px; }
+  .nav { height: 58px; }
+  section { padding: 48px 0; }
+  .hero { padding: 56px 0 28px; }
+  .cta-row { flex-direction: column; align-items: stretch; }
+  .cta-row .btn { justify-content: center; width: 100%; min-height: var(--tap); }
+  .sbtn { width: 44px; height: 44px; }
+}
+
+@media (max-width: 420px){
+  .kicker { font-size: 11px; padding: 5px 9px; }
+  .brand { font-size: 1.1rem; }
+}
+
+.sbtn { min-width: var(--tap); min-height: var(--tap); }
+
+@media (prefers-reduced-motion: reduce){
+  .slides { transition: none !important; }
+  .sbtn, .btn { transition: none !important; }
+}
+html, body { overflow-x: hidden; }
+
+
+</style>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nathan's Landscaping",
+    "areaServed": "Worcester, Worcestershire",
+    "address": {"@type":"PostalAddress", "addressLocality":"Worcester", "addressRegion":"Worcestershire", "addressCountry":"GB"},
+    "url": "",
+    "telephone": "+44 7476 351866",
+    "email": "NathsLandscapes@gmail.com",
+    "description": "Landscaping, fencing, patios, pergolas, clearance and garden features across Worcestershire.",
+    "sameAs": []
+  }
+  
+// Touch-swipe support for sliders
+document.querySelectorAll('.slider').forEach(slider => {
+  const slides = slider.querySelector('.slides');
+  if (!slides) return;
+  let startX = 0, dx = 0, isTouching = false;
+  const threshold = 40;
+  const onStart = (x)=>{ isTouching = true; startX = x; dx = 0; slides.style.transition = 'none'; };
+  const onMove = (x)=>{ if (!isTouching) return; dx = x - startX; };
+  const onEnd = ()=>{
+    if (!isTouching) return;
+    isTouching = false;
+    slides.style.transition = '';
+    if (Math.abs(dx) > threshold) {
+      slider.querySelector(dx < 0 ? '.next' : '.prev')?.click();
+    }
+    dx = 0;
+  };
+  slider.addEventListener('touchstart', e => onStart(e.touches[0].clientX), {passive:true});
+  slider.addEventListener('touchmove',  e => onMove(e.touches[0].clientX), {passive:true});
+  slider.addEventListener('touchend',   onEnd);
+  slider.addEventListener('touchcancel',onEnd);
+});
+
+</script>
+</head>
+<body>
+<header>
+<div class="container nav"><img alt="Nathan's Landscaping Logo" class="logo" src="/images/LogoNoTextTitle_upscaled.png"/>
+<a aria-label="Go to top" class="brand" href="#top">Nathan's Landscaping</a>
+</div>
+</header>
+<main id="top">
+<section class="hero">
+<div class="container hero-inner">
+<span class="kicker">Worcester • Worcestershire</span>
+<h1 class="title">Beautiful, practical gardens—built properly.</h1>
+<p class="sub">From full makeovers to tidy-ups, I deliver reliable, high-quality landscaping across Worcester: fencing, patios, pergolas, clearance, features and more.</p>
+<div class="cta-row">
+<a class="btn primary" href="#contact">Get a free quote</a>
+<a class="btn ghost" href="#showcase">See work</a>
+</div>
+</div>
+</section>
+<section class="container" id="about">
+<div class="about">
+<div class="card">
+<div class="eyebrow">About</div>
+<h2>Hi, I’m Nathan.</h2>
+<div class="cols-2">
+<p>I live in the heart of Worcestershire—Worcester itself! I’ve been working in landscaping for many years, and I really enjoy helping people turn their outdoor spaces into something both beautiful and practical.</p>
+<p>Whether it's a cosy back-garden or a full garden makeover, I love bringing ideas to life. From design to execution, I offer a range of services to transform your garden into something special.</p>
+</div>
+<div class="mt-6 small">Fully insured • Friendly &amp; reliable • Free quotes</div>
+</div>
+<div aria-label="Project photo showcase" class="leaf slider about-slider">
+<button aria-label="Previous" class="sbtn prev">‹</button>
+<div class="slides">
+<img decoding="async" loading="lazy" alt="Project 1" src="/images/Featured/1.jpg"/>
+<img decoding="async" loading="lazy" alt="Project 2" src="/images/Featured/2.jpg"/>
+<img decoding="async" loading="lazy" alt="Project 3" src="/images/Featured/3.jpg"/>
+<img decoding="async" loading="lazy" alt="Project 4" src="/images/Featured/4.jpg"/>
+<img decoding="async" loading="lazy" alt="Project 5" src="/images/Featured/5.jpg"/>
+</div>
+<button aria-label="Next" class="sbtn next">›</button>
+</div>
+</div>
+</section>
+<section class="services" id="services">
+<div class="container">
+<div class="eyebrow center">Services</div>
+<h2 class="center">What I can do for your garden</h2>
+<div class="grid mt-6">
+<article class="service-card"><span class="tag">Landscaping</span><h3>Complete landscaping</h3><p>Transform your garden with fencing, patios, pergolas, clearance and more—planned and installed with care.</p></article>
+<article class="service-card"><span class="tag">Fencing</span><h3>Strong, tidy fencing</h3><p>High-quality, long-lasting fences that lift kerb appeal. From small repairs to full fence lines—done right.</p></article>
+<article class="service-card"><span class="tag">Patios</span><h3>Patios that last</h3><p>Custom-designed patios for gatherings and quiet evenings—level, well-drained and built to standard.</p></article>
+<article class="service-card"><span class="tag">Pergolas</span><h3>Shade &amp; structure</h3><p>Beautifully crafted pergolas to frame seating areas and add elegant, usable shade to your space.</p></article>
+<article class="service-card"><span class="tag">Clearance</span><h3>Garden clearance</h3><p>Efficient removal of overgrowth, waste and clutter—so your garden looks manageable and fresh again.</p></article>
+<article class="service-card"><span class="tag">Features</span><h3>Finishing touches</h3><p>Water features, lighting and focal points that bring personality and atmosphere to your garden.</p></article>
+</div>
+<div class="features-strip">
+<div class="feat">Free, no-obligation quotes</div>
+<div class="feat">Respectful of you &amp; your neighbours</div>
+<div class="feat">All work left tidy</div>
+</div>
+</div>
+</section>
+<section class="container showcases" id="showcase">
+<div class="eyebrow center">Showcase</div>
+<h2 class="center">Past &amp; Recent work</h2>
+<div class="showcase-grid">
+<div class="scard">
+<h3>Patios</h3>
+<div class="slider" data-name="patios">
+<button aria-label="Previous" class="sbtn prev">‹</button>
+<div class="slides">
+<img decoding="async" loading="lazy" alt="1" src="/images/Patios/1.jpg"/>
+<img decoding="async" loading="lazy" alt="2" src="/images/Patios/2.jpg"/>
+<img decoding="async" loading="lazy" alt="3" src="/images/Patios/3.jpg"/>
+<img decoding="async" loading="lazy" alt="4" src="/images/Patios/4.jpg"/>
+<img decoding="async" loading="lazy" alt="5" src="/images/Patios/5.jpg"/>
+<img decoding="async" loading="lazy" alt="6" src="/images/Patios/6.jpg"/>
+<img decoding="async" loading="lazy" alt="7" src="/images/Patios/7.jpg"/>
+<img decoding="async" loading="lazy" alt="8" src="/images/Patios/8.jpg"/>
+<img decoding="async" loading="lazy" alt="9" src="/images/Patios/9.jpg"/>
+<img decoding="async" loading="lazy" alt="10" src="/images/Patios/10.jpg"/>
+<img decoding="async" loading="lazy" alt="11" src="/images/Patios/11.jpg"/>
+<img decoding="async" loading="lazy" alt="12" src="/images/Patios/12.jpg"/>
+<img decoding="async" loading="lazy" alt="13" src="/images/Patios/13.jpg"/>
+<img decoding="async" loading="lazy" alt="14" src="/images/Patios/14.jpg"/>
+<img decoding="async" loading="lazy" alt="15" src="/images/Patios/15.jpg"/>
+<img decoding="async" loading="lazy" alt="16" src="/images/Patios/16.jpg"/>
+<img decoding="async" loading="lazy" alt="17" src="/images/Patios/17.jpg"/>
+<img decoding="async" loading="lazy" alt="18" src="/images/Patios/18.jpg"/>
+<img decoding="async" loading="lazy" alt="19" src="/images/Patios/19.jpg"/>
+<img decoding="async" loading="lazy" alt="20" src="/images/Patios/20.jpg"/>
+<img decoding="async" loading="lazy" alt="21" src="/images/Patios/21.jpg"/>
+<img decoding="async" loading="lazy" alt="22" src="/images/Patios/22.jpg"/>
+<img decoding="async" loading="lazy" alt="23" src="/images/Patios/23.jpg"/>
+<img decoding="async" loading="lazy" alt="24" src="/images/Patios/24.jpg"/>
+<img decoding="async" loading="lazy" alt="25" src="/images/Patios/25.jpg"/>
+<img decoding="async" loading="lazy" alt="26" src="/images/Patios/26.jpg"/>
+<img decoding="async" loading="lazy" alt="27" src="/images/Patios/27.jpg"/>
+<img decoding="async" loading="lazy" alt="28" src="/images/Patios/28.jpg"/>
+<img decoding="async" loading="lazy" alt="29" src="/images/Patios/29.jpg"/>
+<img decoding="async" loading="lazy" alt="30" src="/images/Patios/30.jpg"/>
+<img decoding="async" loading="lazy" alt="31" src="/images/Patios/31.jpg"/>
+<img decoding="async" loading="lazy" alt="32" src="/images/Patios/32.jpg"/>
+<img decoding="async" loading="lazy" alt="33" src="/images/Patios/33.jpg"/>
+<img decoding="async" loading="lazy" alt="34" src="/images/Patios/34.jpg"/>
+<img decoding="async" loading="lazy" alt="35" src="/images/Patios/35.jpg"/>
+<img decoding="async" loading="lazy" alt="36" src="/images/Patios/36.jpg"/>
+<img decoding="async" loading="lazy" alt="37" src="/images/Patios/37.jpg"/>
+<img decoding="async" loading="lazy" alt="38" src="/images/Patios/38.jpg"/>
+</div>
+<button aria-label="Next" class="sbtn next">›</button>
+</div>
+</div>
+<div class="scard">
+<h3>Block Paving</h3>
+<div class="slider" data-name="blockpaving">
+<button aria-label="Previous" class="sbtn prev">‹</button>
+<div class="slides">
+<img decoding="async" loading="lazy" alt="1" src="/images/BlockPaving/1.jpg"/>
+<img decoding="async" loading="lazy" alt="2" src="/images/BlockPaving/2.jpg"/>
+<img decoding="async" loading="lazy" alt="3" src="/images/BlockPaving/3.jpg"/>
+<img decoding="async" loading="lazy" alt="4" src="/images/BlockPaving/4.jpg"/>
+<img decoding="async" loading="lazy" alt="5" src="/images/BlockPaving/5.jpg"/>
+<img decoding="async" loading="lazy" alt="6" src="/images/BlockPaving/6.jpg"/>
+<img decoding="async" loading="lazy" alt="7" src="/images/BlockPaving/7.jpg"/>
+<img decoding="async" loading="lazy" alt="8" src="/images/BlockPaving/8.jpg"/>
+<img decoding="async" loading="lazy" alt="9" src="/images/BlockPaving/9.jpg"/>
+<img decoding="async" loading="lazy" alt="10" src="/images/BlockPaving/10.jpg"/>
+<img decoding="async" loading="lazy" alt="11" src="/images/BlockPaving/11.jpg"/>
+<img decoding="async" loading="lazy" alt="12" src="/images/BlockPaving/12.jpg"/>
+<img decoding="async" loading="lazy" alt="13" src="/images/BlockPaving/13.jpg"/>
+<img decoding="async" loading="lazy" alt="14" src="/images/BlockPaving/14.jpg"/>
+<img decoding="async" loading="lazy" alt="15" src="/images/BlockPaving/15.jpg"/>
+<img decoding="async" loading="lazy" alt="16" src="/images/BlockPaving/16.jpg"/>
+<img decoding="async" loading="lazy" alt="17" src="/images/BlockPaving/17.jpg"/>
+<img decoding="async" loading="lazy" alt="18" src="/images/BlockPaving/18.jpg"/>
+</div>
+<button aria-label="Next" class="sbtn next">›</button>
+</div>
+</div>
+<div class="scard">
+<h3>Fencing</h3>
+<div class="slider" data-name="fencing">
+<button aria-label="Previous" class="sbtn prev">‹</button>
+<div class="slides">
+<img decoding="async" loading="lazy" alt="1" src="/images/Fencing/1.jpg"/>
+<img decoding="async" loading="lazy" alt="2" src="/images/Fencing/2.jpg"/>
+<img decoding="async" loading="lazy" alt="3" src="/images/Fencing/3.jpg"/>
+<img decoding="async" loading="lazy" alt="4" src="/images/Fencing/4.jpg"/>
+<img decoding="async" loading="lazy" alt="5" src="/images/Fencing/5.jpg"/>
+<img decoding="async" loading="lazy" alt="6" src="/images/Fencing/6.jpg"/>
+<img decoding="async" loading="lazy" alt="7" src="/images/Fencing/7.jpg"/>
+<img decoding="async" loading="lazy" alt="8" src="/images/Fencing/8.jpg"/>
+<img decoding="async" loading="lazy" alt="9" src="/images/Fencing/9.jpg"/>
+<img decoding="async" loading="lazy" alt="10" src="/images/Fencing/10.jpg"/>
+<img decoding="async" loading="lazy" alt="11" src="/images/Fencing/11.jpg"/>
+<img decoding="async" loading="lazy" alt="12" src="/images/Fencing/12.jpg"/>
+<img decoding="async" loading="lazy" alt="13" src="/images/Fencing/13.jpg"/>
+<img decoding="async" loading="lazy" alt="14" src="/images/Fencing/14.jpg"/>
+<img decoding="async" loading="lazy" alt="15" src="/images/Fencing/15.jpg"/>
+<img decoding="async" loading="lazy" alt="16" src="/images/Fencing/16.jpg"/>
+<img decoding="async" loading="lazy" alt="17" src="/images/Fencing/17.jpg"/>
+<img decoding="async" loading="lazy" alt="18" src="/images/Fencing/18.jpg"/>
+<img decoding="async" loading="lazy" alt="19" src="/images/Fencing/19.jpg"/>
+<img decoding="async" loading="lazy" alt="20" src="/images/Fencing/20.jpg"/>
+<img decoding="async" loading="lazy" alt="21" src="/images/Fencing/21.jpg"/>
+<img decoding="async" loading="lazy" alt="22" src="/images/Fencing/22.jpg"/>
+<img decoding="async" loading="lazy" alt="23" src="/images/Fencing/23.jpg"/>
+<img decoding="async" loading="lazy" alt="24" src="/images/Fencing/24.jpg"/>
+</div>
+<button aria-label="Next" class="sbtn next">›</button>
+</div>
+</div>
+<div class="scard">
+<h3>Decking</h3>
+<div class="slider" data-name="decking">
+<button aria-label="Previous" class="sbtn prev">‹</button>
+<div class="slides">
+<img decoding="async" loading="lazy" alt="1" src="/images/Decking/1.jpg"/>
+<img decoding="async" loading="lazy" alt="2" src="/images/Decking/2.jpg"/>
+</div>
+<button aria-label="Next" class="sbtn next">›</button>
+</div>
+</div>
+<div class="scard">
+<h3>Walling</h3>
+<div class="slider" data-name="walling">
+<button aria-label="Previous" class="sbtn prev">‹</button>
+<div class="slides">
+<img decoding="async" loading="lazy" alt="1" src="/images/Walling/1.jpg"/>
+<img decoding="async" loading="lazy" alt="2" src="/images/Walling/2.jpg"/>
+<img decoding="async" loading="lazy" alt="3" src="/images/Walling/3.jpg"/>
+<img decoding="async" loading="lazy" alt="4" src="/images/Walling/4.jpg"/>
+<img decoding="async" loading="lazy" alt="5" src="/images/Walling/5.jpg"/>
+<img decoding="async" loading="lazy" alt="6" src="/images/Walling/6.jpg"/>
+<img decoding="async" loading="lazy" alt="7" src="/images/Walling/7.jpg"/>
+</div>
+<button aria-label="Next" class="sbtn next">›</button>
+</div>
+</div>
+<div class="scard">
+<h3>Sleeperwork</h3>
+<div class="slider" data-name="sleeperwork">
+<button aria-label="Previous" class="sbtn prev">‹</button>
+<div class="slides">
+<img decoding="async" loading="lazy" alt="1" src="/images/Sleeperwork/1.jpg"/>
+<img decoding="async" loading="lazy" alt="2" src="/images/Sleeperwork/2.jpg"/>
+<img decoding="async" loading="lazy" alt="3" src="/images/Sleeperwork/3.jpg"/>
+<img decoding="async" loading="lazy" alt="4" src="/images/Sleeperwork/4.jpg"/>
+<img decoding="async" loading="lazy" alt="5" src="/images/Sleeperwork/5.jpg"/>
+<img decoding="async" loading="lazy" alt="6" src="/images/Sleeperwork/6.jpg"/>
+<img decoding="async" loading="lazy" alt="7" src="/images/Sleeperwork/7.jpg"/>
+<img decoding="async" loading="lazy" alt="8" src="/images/Sleeperwork/8.jpg"/>
+<img decoding="async" loading="lazy" alt="9" src="/images/Sleeperwork/9.jpg"/>
+<img decoding="async" loading="lazy" alt="10" src="/images/Sleeperwork/10.jpg"/>
+<img decoding="async" loading="lazy" alt="11" src="/images/Sleeperwork/11.jpg"/>
+<img decoding="async" loading="lazy" alt="12" src="/images/Sleeperwork/12.jpg"/>
+<img decoding="async" loading="lazy" alt="13" src="/images/Sleeperwork/13.jpg"/>
+</div>
+<button aria-label="Next" class="sbtn next">›</button>
+</div>
+</div>
+<div class="scard">
+<h3>Log Cabins</h3>
+<div class="slider" data-name="logcabins">
+<button aria-label="Previous" class="sbtn prev">‹</button>
+<div class="slides">
+<img decoding="async" loading="lazy" alt="1" src="/images/LogCabins/1.jpg"/>
+<img decoding="async" loading="lazy" alt="2" src="/images/LogCabins/2.jpg"/>
+</div>
+<button aria-label="Next" class="sbtn next">›</button>
+</div>
+</div>
+<div class="scard">
+<h3>Gazebos</h3>
+<div class="slider" data-name="gazebos">
+<button aria-label="Previous" class="sbtn prev">‹</button>
+<div class="slides">
+<img decoding="async" loading="lazy" alt="1" src="/images/Gazebos/1.jpg"/>
+<img decoding="async" loading="lazy" alt="2" src="/images/Gazebos/2.jpg"/>
+<img decoding="async" loading="lazy" alt="3" src="/images/Gazebos/3.jpg"/>
+<img decoding="async" loading="lazy" alt="4" src="/images/Gazebos/4.jpg"/>
+<img decoding="async" loading="lazy" alt="5" src="/images/Gazebos/5.jpg"/>
+<img decoding="async" loading="lazy" alt="6" src="/images/Gazebos/6.jpg"/>
+</div>
+<button aria-label="Next" class="sbtn next">›</button>
+</div>
+</div>
+</div>
+</section>
+<section class="container testimonials" id="testimonials">
+<div class="eyebrow center">Reviews</div>
+<h2 class="center">What customers say</h2>
+<div class="wrap mt-6">
+<div class="quote"><p>“Absolute brilliant job done from start to finish. Work ethics sublime and precision in everything you do.”</p><div class="by">— John L</div></div>
+<div class="quote"><p>“He was a pleasure to have around, friendly and polite. We love the look of our finished garden and feel it’s been completed to a really high standard at a reasonable price!”</p><div class="by">— Sarah D</div></div>
+<div class="quote"><p>“Nathan is a very conscientious and hardworking young man. We would certainly recommend him for all aspects of landscaping.”</p><div class="by">— Trish A</div></div>
+</div>
+</section>
+<section class="cta" id="contact">
+<div class="container">
+<h2>Ready to improve your garden?</h2>
+<p class="mt-2">Tell me what you’re after and I’ll get back with a free, no-pressure quote.</p>
+<div class="mt-6">
+<form action="https://formspree.io/f/xnnzlneq" class="contact-form" id="contact-form" method="POST">
+<div class="grid-form">
+<div class="field">
+<label for="name">Name</label>
+<input id="name" name="name" placeholder="Your name" required="" type="text"/>
+</div>
+<div class="field">
+<label for="email">Email</label>
+<input id="email-input" name="email" placeholder="you@example.com" required="" type="email"/>
+</div>
+<div class="field">
+<label for="phone">Phone</label>
+<input id="phone-input" name="phone" placeholder="+44 7476 351866" type="tel"/>
+</div>
+<div class="field field-full">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Tell me about your garden…" required="" rows="5"></textarea>
+</div>
+<input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
+</div>
+<div class="cta-row" style="margin-top:12px">
+<button class="btn primary" type="submit">Send message</button>
+<a class="btn ghost" href="tel:+447476351866">Call: +44 7476 351866</a>
+<a class="btn ghost" href="mailto:NathsLandscapes@gmail.com">Email: NathsLandscapes@gmail.com</a>
+</div>
+<p aria-live="polite" class="small" id="form-status" role="status" style="margin-top:10px"></p>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer>
+  <div class="container foot">
+    <div>
+      <strong>Nathan's Landscaping</strong>
+      <div class="small">Worcester, Worcestershire • Fully insured</div>
+    </div>
+    <div class="small">© <span id="y"></span> Nathan's Landscaping. All rights reserved.</div>
+  </div>
+
+  <div class="container">
+    <div class="design-credit fullbleed">
+      Website designed by <strong>Render Web Studios</strong> |
+      Contact: <a href="mailto:Contact@RenderWebStudios.co.uk">Contact@RenderWebStudios.co.uk</a> |
+      <a href="tel:07572147102">07572 147102</a> |
+      <a href="https://RenderWebStudios.co.uk" target="_blank">RenderWebStudios.co.uk</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.slider').forEach((slider)=>{
+      const slides = slider.querySelector('.slides');
+      const items = slides.children;
+      let i = 0;
+      const go = (n)=>{ i = (n + items.length) % items.length; slides.style.transform = `translateX(${-i*100}%)`; };
+      slider.querySelector('.next')?.addEventListener('click', ()=> go(i+1));
+      slider.querySelector('.prev')?.addEventListener('click', ()=> go(i-1));
+      setInterval(()=> go(i+1), 5000);
+    });
+
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+    form.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      status.textContent = 'Sending…';
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data
+        });
+        if (res.ok) {
+          status.textContent = 'Thanks! Your message has been sent.';
+          form.reset();
+        } else {
+          const j = await res.json().catch(()=>({}));
+          status.textContent = j.error || 'Something went wrong. Please try again or email directly.';
+        }
+      } catch(err){
+        status.textContent = 'Network error. Please try again or contact me via phone/email.';
+      }
+    });
+    document.querySelectorAll('.slider').forEach(slider => {
+      const slides = slider.querySelector('.slides');
+      if (!slides) return;
+      let startX = 0, dx = 0, isTouching = false;
+      const threshold = 40;
+      const onStart = (x)=>{ isTouching = true; startX = x; dx = 0; slides.style.transition = 'none'; };
+      const onMove = (x)=>{ if (!isTouching) return; dx = x - startX; };
+      const onEnd = ()=>{
+        if (!isTouching) return;
+        isTouching = false;
+        slides.style.transition = '';
+        if (Math.abs(dx) > threshold) {
+          slider.querySelector(dx < 0 ? '.next' : '.prev')?.click();
+        }
+        dx = 0;
+      };
+      slider.addEventListener('touchstart', e => onStart(e.touches[0].clientX), {passive:true});
+      slider.addEventListener('touchmove',  e => onMove(e.touches[0].clientX), {passive:true});
+      slider.addEventListener('touchend',   onEnd);
+      slider.addEventListener('touchcancel',onEnd);
+    });
+
+</script>
+</body>
+</html>
