@@ -259,6 +259,20 @@ header .container {
 html, body { overflow-x: hidden; }
 
 
+
+.facebook-link img {
+  height: 32px;
+  width: auto;
+}
+.facebook-link {
+  margin-left: auto;
+}
+.container.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 </style>
 <script type="application/ld+json">
   {
@@ -303,6 +317,11 @@ document.querySelectorAll('.slider').forEach(slider => {
 <header>
 <div class="container nav"><img alt="Nathan's Landscaping Logo" class="logo" src="/images/LogoNoTextTitle_upscaled.png"/>
 <a aria-label="Go to top" class="brand" href="#top">Nathan's Landscaping</a>
+  <div class="facebook-link">
+    <a href="https://www.facebook.com/profile.php?id=61555212551689" target="_blank">
+      <img src="/images/Facebook.png" alt="Facebook">
+    </a>
+  </div>
 </div>
 </header>
 <main id="top">
