@@ -258,19 +258,49 @@ header .container {
 }
 html, body { overflow-x: hidden; }
 
-
-
 .facebook-link img {
-  height: 32px;
+  height: 80px;
   width: auto;
 }
 .facebook-link {
-  margin-left: auto;
+  margin-left: 92%;
 }
 .container.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .container.nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 0;
+  }
+
+  .logo {
+    display: block;
+    position: static;
+    transform: none;
+    height: 100px;
+    margin: 0 auto;
+  }
+
+  .facebook-link {
+    margin: 0;
+  }
+
+  .facebook-link img {
+    height: 50px;
+  }
+
+  .nav .brand {
+    position: static;
+    transform: none;
+    text-align: center;
+    order: -1;
+  }
 }
 
 </style>
