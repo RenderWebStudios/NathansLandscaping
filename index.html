@@ -7,22 +7,27 @@
 <title>Nathan's Landscaping | Worcester</title>
 <meta content="Landscaping, fencing, patios, pergolas, garden clearance and more across Worcester &amp; Worcestershire. Transform your garden with Nathan's Landscaping." name="description"/>
 <style>
-    :root {
-      --green-900: #0b2c22;
-      --green-800: #0e3a2a;
-      --green-700: #145a3a;
-      --green-600: #1f7a50;
-      --green-500: #2aa566;
-      --green-300: #bfe7cf;
-      --beige-50: #f3f7f2;
-      --beige-100: #eaf2ea;
-      --stone-900: #0f1a14;
-      --stone-700: #2a3b32;
-      --stone-600: #3a4c42;
-      --shadow: 0 10px 30px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06);
-      --radius-xl: 24px;
-      --radius-lg: 16px;
-    }
+    
+:root {
+  --green-900: #2c2c2c;
+  --green-800: #2c2c2c;
+  --green-700: #2c2c2c;
+  --green-600: #444444;
+  --green-500: #848484;
+  --green-300: #a0a0a0;
+
+  --beige-50: #2c2c2c;
+  --beige-100: #383838;
+
+  --stone-900: #2c2c2c;
+  --stone-700: #e0e0e0;
+  --stone-600: #cccccc;
+
+  --shadow: 0 10px 30px rgba(0,0,0,.6), 0 2px 8px rgba(0,0,0,.5);
+  --radius-xl: 24px;
+  --radius-lg: 16px;
+}
+
 
     * { box-sizing: border-box }
     html { scroll-behavior: smooth }
@@ -32,7 +37,9 @@
       color: #102018;
       background: var(--beige-50);
       line-height: 1.5;
-    }
+    
+  background: var(--beige-50);
+  color: var(--stone-900); }
     body {
       display: flex;
       flex-direction: column;
@@ -43,55 +50,48 @@
     }
     footer {
       margin-top: auto;
-    }
+    
+  background: var(--green-800);
+  color: #ffffff; }
     html, body {
       height: 100%;
       margin: 0;
     }
 
     header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: saturate(140%) blur(8px);
-      background: linear-gradient(to bottom, rgba(243,247,242,0.95), rgba(243,247,242,0.70));
-      border-bottom: 1px solid rgba(0,0,0,.06);
-    }
+  position: sticky; top: 0; z-index: 50;
+  background: var(--green-800);
+  border-bottom: 1px solid var(--green-600);
+}
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .nav { display:flex; align-items:center; justify-content:center; height:68px; }
-    .brand { font-weight: 800; letter-spacing: .4px; color: var(--green-800); text-decoration:none; font-size: clamp(1.1rem, 2.5vw, 1.35rem); }
+    .brand { font-weight: 800; letter-spacing: .4px; color: #ffffff; text-decoration:none; font-size: clamp(1.1rem, 2.5vw, 1.35rem); }
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(1200px 400px at 10% -10%, rgba(14,58,42,.14), transparent 60%),
-        radial-gradient(1000px 400px at 90% 0%, rgba(31,122,80,.14), transparent 60%),
-        linear-gradient(180deg, #e5efe9 0%, #eef4ef 35%);
-      padding: 90px 0 40px;
-    }
+    .hero { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--green-800) 0%, var(--green-700) 100%); padding: 90px 0 40px; }
     .hero-inner { text-align: center; }
     .kicker {
       display:inline-block; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
-      color: var(--green-700); background: #e1efe6; border:1px solid #cfe5d8; padding:6px 10px; border-radius:999px; font-size:12px;
+      color: #ffffff; background: #848484; border:1px solid #cfe5d8; padding:6px 10px; border-radius:999px; font-size:12px;
     }
-    h1.title { margin: 16px 0 14px; font-size: clamp(2rem, 5vw, 3.25rem); line-height:1.05; color: var(--green-900); }
-    .sub { max-width: 900px; margin: 0 auto; color: #1f3a2e; font-size: clamp(1rem, 2.2vw, 1.15rem); }
+    h1.title { margin: 16px 0 14px; font-size: clamp(2rem, 5vw, 3.25rem); line-height:1.05; color: #ffffff; }
+    .sub { max-width: 900px; margin: 0 auto; color: #ffffff; font-size: clamp(1rem, 2.2vw, 1.15rem); }
     .cta-row { margin-top: 26px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
     .btn {
       display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; border-radius: 999px; padding: 12px 18px;
       border:1px solid transparent; box-shadow: var(--shadow);
     }
-    .btn.primary { background: var(--green-700); color: white; }
-    .btn.primary:hover { background: var(--green-800); }
-    .btn.ghost { background: white; color: var(--green-800); border-color:#e2eee6; }
-    .btn.ghost:hover { background: #f2faf5; }
+    .btn.primary { background: var(--green-500); color: #ffffff; }
+    .btn.primary:hover { background: var(--green-300); }
+    .btn.ghost { background: transparent; color: #ffffff; border: 1px solid var(--green-500); }
+    .btn.ghost:hover { background: var(--green-600); color: var(--stone-900); }
 
     section { padding: 72px 0; }
-    .eyebrow { text-transform: uppercase; letter-spacing:.12em; font-weight:800; color: var(--green-700); font-size:12px; }
-    h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 10px 0 14px; color: var(--green-900); }
+    .eyebrow { text-transform: uppercase; letter-spacing:.12em; font-weight:800; color: #ffffff; font-size:12px; }
+    h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); margin: 10px 0 14px; color: #ffffff; }
 
     .about { display:grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: center; }
-    .about .card { background:white; border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow); border:1px solid #e8f0ea; }
-    .about p { margin: 0 0 12px; color:#2b4336; }
+    .about .card { background: var(--green-700); color: var(--stone-900); border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow); border:1px solid #e8f0ea; }
+    .about p { margin: 0 0 12px; color:#ffffff; }
     .leaf {
       aspect-ratio: 4/3; border-radius: var(--radius-xl);
       border:1px solid #dfeedf; box-shadow: var(--shadow);
@@ -100,48 +100,58 @@
 
     .services { background: var(--beige-100); border-top:1px solid #e8efe8; border-bottom:1px solid #e8efe8; }
     .grid { display:grid; gap: 16px; grid-template-columns: repeat(6,1fr); }
-    .service-card { grid-column: span 6; background:white; border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow); border:1px solid #e6efe9; position:relative; overflow:hidden; }
-    .service-card::after{content:""; position:absolute; inset:auto 0 -60px -20px; height:120px; background: radial-gradient(180px 60px at left bottom, rgba(42,165,102,.18), transparent 70%)}
+    .service-card { grid-column: span 6; background: var(--green-700); color: var(--stone-900); border-radius: var(--radius-lg); padding: 20px; box-shadow: var(--shadow); border:1px solid #e6efe9; position:relative; overflow:hidden; }
+    .service-card::after{content:""; position:absolute; inset:auto 0 -60px -20px; height:120px; background: radial-gradient(180px 60px at left bottom, rgba(132,132,132,.18), transparent 70%)}
     .service-card h3 { margin: 2px 0 6px; color: var(--stone-900); font-size: 1.15rem; }
-    .service-card p { margin: 0; color: #2d4738; }
-    .service-card .tag { display:inline-block; font-size:12px; background:#eff8f1; border:1px solid #ddeadf; color:var(--green-700); padding:4px 10px; border-radius:999px; font-weight:700; margin-bottom:8px }
+    .service-card p { margin: 0; color: #ffffff; }
+    .service-card .tag { display:inline-block; font-size:12px; background:#eff8f1; border:1px solid #ddeadf; color: #000000; padding:4px 10px; border-radius:999px; font-weight:700; margin-bottom:8px }
     @media (min-width: 720px){ .service-card { grid-column: span 3 } }
     @media (min-width: 1024px){ .service-card { grid-column: span 2 } }
 
     .features-strip { margin-top: 16px; display:grid; grid-template-columns: repeat(3,1fr); gap:10px; }
-    .feat { background:white; border:1px dashed #cfe8d7; border-radius: 14px; padding: 12px; text-align:center; color:#2f4a39 }
+    .feat { background: var(--green-700); color: var(--stone-900); border:1px dashed #555; border-radius: 14px; padding: 12px; text-align:center; color:#ffffff }
 
     .testimonials .wrap { display:grid; gap: 16px; grid-template-columns: 1fr; }
-    .quote { background:white; border-left: 6px solid var(--green-600); padding: 18px 20px; border-radius: 12px; box-shadow: var(--shadow); border-right:1px solid #e7efe8; }
-    .quote p { margin: 0 0 8px; }
-    .quote .by { color:#234233; font-weight:700 }
+    .quote { background: var(--green-700); color: var(--stone-900); border-left: 6px solid var(--green-600); padding: 18px 20px; border-radius: 12px; box-shadow: var(--shadow); border-right:1px solid #e7efe8; margin-bottom:30px}
+    .quote p { margin: 0 0 8px; color:#ffffff }
+    .quote .by { color:#ffffff; font-weight:700 }
     @media (min-width: 900px){ .testimonials .wrap { grid-template-columns: 1fr 1fr 1fr } }
 
-    .cta { text-align:center; background: linear-gradient(180deg, #eaf4ee, #e6f1eb); border-top:1px solid #e4efe8; border-bottom:1px solid #e4efe8; }
+    .cta { text-align:center; background: linear-gradient(180deg, #2f2f2f, #2a2a2a); border-top:1px solid var(--green-600); border-bottom:1px solid var(--green-600); }
 
-    footer { padding: 28px 0 48px; color:#2e483a; }
+    footer { padding: 28px 0 48px; color:#ffffff; }
     footer .foot { display:flex; gap: 20px; align-items:center; justify-content:space-between; flex-wrap: wrap }
-    .small { color:#3a5b49; font-size: 14px; }
+    .small { color:#ffffff; font-size: 14px; }
 
     .mt-6 { margin-top: 24px }
     .mt-2 { margin-top: 8px }
-    .center { text-align:center }
+    .center { text-align:center; margin-top:30px}
     .cols-2 { columns: 1; column-gap: 26px }
     @media (min-width: 880px){ .cols-2 { columns: 2 } }
 
-    .contact-form { max-width: 840px; margin: 0 auto; background: white; border:1px solid #e0ede5; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow) }
+    .contact-form { background: var(--green-700); color: #ffffff; border:1px solid #e0ede5; padding: 20px; border-radius: var(--radius-lg); box-shadow: var(--shadow) }
     .grid-form { display:grid; grid-template-columns: 1fr; gap: 12px }
     .field { display:flex; flex-direction:column }
     .field-full { grid-column: 1 / -1 }
-    .field label { font-weight:700; font-size: 0.9rem; color: var(--green-800); margin-bottom:6px }
-    .field input, .field textarea { padding: 12px 14px; border-radius: 12px; border:1px solid #cfe4d7; background:#f9fcfa; outline:none }
-    .field input:focus, .field textarea:focus { border-color: var(--green-600); background:white }
+    .field label { font-weight:700; font-size: 0.9rem; color: #ffffff; margin-bottom:6px }
+    .field input, .field textarea {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--green-500);
+  background: var(--green-600);
+  color: #ffffff;
+  outline: none;
+}
+    .field input:focus, .field textarea:focus {
+  border-color: var(--green-500);
+  background: var(--green-600);
+}
     @media (min-width: 760px){ .grid-form { grid-template-columns: 1fr 1fr } .field-full { grid-column: 1 / 3 } }
 
     .showcases { padding-top: 48px }
     .showcase-grid { display:grid; gap: 16px; grid-template-columns: 1fr; }
     @media (min-width: 900px){ .showcase-grid { grid-template-columns: 1fr 1fr } }
-    .scard { background:white; border:1px solid #e4efe8; border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow) }
+    .scard { background: var(--green-700); color: var(--stone-900); border:1px solid #e4efe8; border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow) }
     .slider { position: relative; overflow: hidden; border-radius: 12px; }
     .slides { display:flex; transition: transform .45s ease; }
     .slides img { width: 100%; flex: 0 0 100%; aspect-ratio: 16/9; object-fit: cover; display:block }
@@ -154,14 +164,7 @@
   
 .logo { height: 200px; margin-top: 25px; margin-right: 1%; }
 .design-credit { font-size: 0.8rem; margin-top: 10px; }
-.design-credit.fullbleed{
-  position: relative;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  width: auto;
-  border-radius: 0;
-  box-shadow: none;
-  background: #0b2c22;
+.design-credit.fullbleed { background: var(--green-800);
   color: #fff;
   padding: 15px;
   text-align: center;
@@ -262,6 +265,7 @@ html, body { overflow-x: hidden; }
   height: 80px;
   width: auto;
 }
+.facebook-link { margin: 0; }
 .facebook-link {
   margin-left: 92%;
 }
@@ -277,13 +281,11 @@ html, body { overflow-x: hidden; }
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    padding: 4px 0;
+    gap: 8px;
+    padding: 12px 0;
   }
 
-  .logo,
-  .nav .brand,
-  .facebook-link {
+  .logo, .nav .brand, .facebook-link {
     position: static !important;
     transform: none !important;
   }
@@ -293,13 +295,12 @@ html, body { overflow-x: hidden; }
     height: 140px;
     margin: 0 auto;
     order: 1;
-    opacity: 0;
   }
 
   .nav .brand {
     order: 2;
     text-align: center;
-    margin-top: -60px;
+    margin-top: 6px;
     left: auto !important;
     transform: none !important;
     font-size: 1.35rem;
@@ -307,7 +308,7 @@ html, body { overflow-x: hidden; }
 
   .facebook-link {
     order: 3;
-    margin: 4px auto 0 !important;
+    margin: 6px auto 0 !important;
     align-self: center;
   }
 
@@ -325,7 +326,6 @@ html, body { overflow-x: hidden; }
 }
 
 
-.facebook-link { margin-left: 92%; }
 
 </style>
 <script type="application/ld+json">
@@ -369,11 +369,11 @@ document.querySelectorAll('.slider').forEach(slider => {
 </head>
 <body>
 <header>
-<div class="container nav"><img alt="Nathan's Landscaping Logo" class="logo" src="/images/LogoNoTextTitle_upscaled.png"/>
+<div class="container nav"><img alt="Nathan's Landscaping Logo" class="logo" src="../NathansLandscaping/images/MainLogo.png"/>
 <a aria-label="Go to top" class="brand" href="#top">Nathan's Landscaping</a>
   <div class="facebook-link">
     <a href="https://www.facebook.com/profile.php?id=61555212551689" target="_blank">
-      <img src="/images/Facebook.png" alt="Facebook">
+      <img src="../NathansLandscaping/images/FacebookLogo.png" alt="Facebook">
     </a>
   </div>
 </div>
