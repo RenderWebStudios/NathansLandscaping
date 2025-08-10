@@ -95,7 +95,7 @@
     .leaf {
       aspect-ratio: 4/3; border-radius: var(--radius-xl);
       border:1px solid #dfeedf; box-shadow: var(--shadow);
-      position: relative; overflow: hidden; background: none;
+      position: relative; overflow: hidden; background: none; margin-bottom: 20px
     }
 
     .services { background: var(--beige-100); border-top:1px solid #e8efe8; border-bottom:1px solid #e8efe8; }
@@ -151,9 +151,9 @@
     .showcases { padding-top: 48px }
     .showcase-grid { display:grid; gap: 16px; grid-template-columns: 1fr; }
     @media (min-width: 900px){ .showcase-grid { grid-template-columns: 1fr 1fr } }
-    .scard { background: var(--green-700); color: var(--stone-900); border:1px solid #e4efe8; border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow) }
+    .scard { background: var(--green-700); color: var(--stone-900); border:1px solid #e4efe8; border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow); color: #ffffff }
     .slider { position: relative; overflow: hidden; border-radius: 12px; }
-    .slides { display:flex; transition: transform .45s ease; }
+    .slides { display:flex; transition: transform .45s ease}
     .slides img { width: 100%; flex: 0 0 100%; aspect-ratio: 16/9; object-fit: cover; display:block }
     .sbtn { position:absolute; top:50%; transform: translateY(-50%); border:0; background: rgba(0,0,0,.35); color:#fff; width:36px; height:36px; border-radius: 999px; cursor:pointer }
     .sbtn:hover { background: rgba(0,0,0,.5) }
